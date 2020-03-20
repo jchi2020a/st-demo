@@ -60,6 +60,11 @@ public class Steps {
         ((ComponentReferencePage) currentPage).searchComponent(query);
     }
 
+    @Given("^I click first result under components$")
+    public void click_first_result_under_components() throws Throwable {
+        ((ComponentReferencePage) currentPage).clickFirstLinkUnderComponents();
+    }
+
     @Then("^testable outcome$")
     public void testable_outcome() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
