@@ -1,3 +1,4 @@
+@with_browser
 Feature: demo
     Scenario: demo
      Given precondition
