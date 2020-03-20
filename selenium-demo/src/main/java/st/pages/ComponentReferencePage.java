@@ -36,9 +36,18 @@ public class ComponentReferencePage{
         return this;
     }
 
-    public ComponentReferencePage clickDropDown(){
+    public ComponentReferencePage clickDropDown() {
         new WebDriverWait(driver, 10)
             .until(ExpectedConditions.presenceOfElementLocated(dropdown))
+            .click();
+        return this;
+    }
+
+    public ComponentReferencePage selectOptionByText(String text){
+        clickDropDown();
+        By option = By.xpath("//*[contains(text(), 'with Inline Edit')]");
+        new WebDriverWait(driver, 10)
+            .until(ExpectedConditions.visibilityOfElementLocated(option))
             .click();
         return this;
     }
