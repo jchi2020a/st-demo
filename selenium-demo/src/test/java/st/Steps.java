@@ -65,6 +65,12 @@ public class Steps {
         ((ComponentReferencePage) currentPage).clickFirstLinkUnderComponents();
     }
 
+    @Given("^I select the \"([^\"]*)\" option$")
+    public void i_select_the_option(String text) throws Throwable {
+        ((ComponentReferencePage) currentPage).selectOptionByText(text);
+        Thread.sleep(5000);
+    }
+
     @Then("^testable outcome$")
     public void testable_outcome() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
