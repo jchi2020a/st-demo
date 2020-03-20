@@ -14,4 +14,9 @@ public class BasePage{
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
+
+    public static BasePage load(WebDriver driver){
+        driver.get(CONFIG.getBaseUrl());
+        return new BasePage(driver);
+    }
 }
