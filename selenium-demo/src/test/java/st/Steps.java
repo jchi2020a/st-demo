@@ -51,14 +51,12 @@ public class Steps {
 
     @Given("^I switch to the \"([^\"]*)\" tab$")
     public void i_switch_to_the_tab(String tabName) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+        currentPage = ((BasePage) currentPage).switchToTab(tabName);
     }
 
     @When("^action$")
     public void action() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+        
     }
 
     @Then("^testable outcome$")
