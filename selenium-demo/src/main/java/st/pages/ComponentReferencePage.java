@@ -51,4 +51,19 @@ public class ComponentReferencePage{
             .click();
         return this;
     }
+
+    public ComponentReferencePage editTable(){
+        new WebDriverWait(driver, 20)
+            .until(ExpectedConditions.visibilityOfElementLocated(InlineTable.editIconLabel))
+            .click();
+        return this;
+    }
+
+    static class InlineTable{
+        static By editIconLabel = By.xpath("//tr[3]/th/lightning-primitive-cell-factory/span/button/lightning-primitive-icon");
+        static By editIconWebSite = By.xpath("//tr[3]/td[3]/lightning-primitive-cell-factory/span/button/lightning-primitive-icon");
+        static By editIconPhone = By.xpath("//tr[3]/td[4]/lightning-primitive-cell-factory/span/button/lightning-primitive-icon");
+        static By editIconClosedAt = By.xpath("//tr[3]/td[5]/lightning-primitive-cell-factory/span/button/lightning-primitive-icon");
+        static By editIconBalance = By.xpath("//tr[3]/td[6]/lightning-primitive-cell-factory/span/button/lightning-primitive-icon");
+    }
 }
