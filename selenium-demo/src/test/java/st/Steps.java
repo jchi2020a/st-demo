@@ -9,6 +9,7 @@ import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import st.util.BaseConfig;
 
 public class Steps {
 
@@ -16,15 +17,18 @@ public class Steps {
 
     @Before({ "@with_browser" })
     public void setUp() {
-        switch (System.getProperty("driver").toLowerCase()) {
-            case "firefox":
-                System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, "/dev/null");
-                driver = new FirefoxDriver();
-            break;
-            default:
-                System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, "/dev/null");
-                driver = new FirefoxDriver();
-            break;
+        System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, "/dev/null");
+        if(System.getProperty("driver") == null) {
+            driver = new FirefoxDriver();
+        } else {
+            switch (System.getProperty("driver").toLowerCase()) {
+                case "firefox":
+                    driver = new FirefoxDriver();
+                break;
+                default:
+                    driver = new FirefoxDriver();
+                break;
+            }
         }
     }
 
@@ -36,6 +40,8 @@ public class Steps {
     @Given("^precondition$")
     public void precondition() throws Throwable {
         driver.get("https://google.com/ncr");
+        String test = BaseConfig.getConfig().getBaseUrl();
+        System.out.println("value: " + test);
     }
 
     @When("^action$")
