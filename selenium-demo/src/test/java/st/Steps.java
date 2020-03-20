@@ -12,6 +12,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import st.pages.BasePage;
+import st.pages.ComponentReferencePage;
 import st.util.BaseConfig;
 import static org.hamcrest.CoreMatchers.is;
 
@@ -54,9 +55,9 @@ public class Steps {
         currentPage = ((BasePage) currentPage).switchToTab(tabName);
     }
 
-    @When("^action$")
-    public void action() throws Throwable {
-        
+    @Given("^I search for \"([^\"]*)\" component$")
+    public void i_search_for_component(String query) throws Throwable {
+        ((ComponentReferencePage) currentPage).searchComponent(query);
     }
 
     @Then("^testable outcome$")
