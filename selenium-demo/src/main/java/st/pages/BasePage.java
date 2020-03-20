@@ -3,6 +3,9 @@ package st.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import st.util.BaseConfig;
 
@@ -30,7 +33,10 @@ public class BasePage{
     }
 
 	public ComponentReferencePage switchToTab(String tabName) {
-        driver.findElement(By.xpath("//span[contains(text(), "+ "'" + tabName + "'" + ")]")).click();;
+        new WebDriverWait(driver, 10)
+            .until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//span[contains(text(), "+ "'" + tabName + "'" + ")]")))
+            .click();
 		return new ComponentReferencePage(driver);
 	}
 }
