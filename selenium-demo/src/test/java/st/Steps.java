@@ -3,6 +3,7 @@ package st;
 import static org.junit.Assert.assertThat;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import cucumber.api.PendingException;
@@ -24,13 +25,16 @@ public class Steps {
 
     @Before({ "@with_browser" })
     public void setUp() {
-        System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, "/dev/null");
         if (System.getProperty("driver") == null) {
             driver = new FirefoxDriver();
         } else {
             switch (System.getProperty("driver").toLowerCase()) {
             case "firefox":
+            System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, "/dev/null");
                 driver = new FirefoxDriver();
+                break;
+            case "chrome":
+                driver = new ChromeDriver();
                 break;
             default:
                 driver = new FirefoxDriver();
@@ -68,7 +72,7 @@ public class Steps {
     @Given("^I select the \"([^\"]*)\" option$")
     public void i_select_the_option(String text) throws Throwable {
         ((ComponentReferencePage) currentPage).selectOptionByText(text);
-        Thread.sleep(5000);
+        ((ComponentReferencePage) currentPage).editTable();
     }
 
     @Then("^testable outcome$")
