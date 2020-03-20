@@ -1,5 +1,6 @@
 package st.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
@@ -27,4 +28,9 @@ public class BasePage{
         driver.get(CONFIG.getBaseUrl());
         return new BasePage(driver);
     }
+
+	public ComponentReferencePage switchToTab(String tabName) {
+        driver.findElement(By.xpath("//span[contains(text(), "+ "'" + tabName + "'" + ")]")).click();;
+		return new ComponentReferencePage(driver);
+	}
 }
