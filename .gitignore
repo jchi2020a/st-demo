@@ -1,1 +1,6 @@
 *.mov
+sitetracker/selenium-demo/.classpath
+sitetracker/selenium-demo/.project
+sitetracker/selenium-demo/.settings/
+sitetracker/selenium-demo/.vscode/
+sitetracker/selenium-demo/target/
