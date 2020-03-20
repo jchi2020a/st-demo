@@ -14,7 +14,8 @@ public class ComponentReferencePage{
     @FindBy(css = "input[type='search']")
     WebElement serchField;
 
-    
+    By dropdown = By.cssSelector("input[placeholder='Choose Example']");
+
     By firstLinkUnderComponentsXpath = By.xpath("(//div[@class='slds-tree_container'])[1]/componentreference-tree-item/componentreference-tree-item/div[2]");
     
     public ComponentReferencePage(WebDriver driver){
@@ -31,6 +32,13 @@ public class ComponentReferencePage{
     public ComponentReferencePage clickFirstLinkUnderComponents(){
         new WebDriverWait(driver, 10)
             .until(ExpectedConditions.presenceOfElementLocated(firstLinkUnderComponentsXpath))
+            .click();
+        return this;
+    }
+
+    public ComponentReferencePage clickDropDown(){
+        new WebDriverWait(driver, 10)
+            .until(ExpectedConditions.presenceOfElementLocated(dropdown))
             .click();
         return this;
     }
