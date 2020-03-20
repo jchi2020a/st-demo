@@ -9,10 +9,18 @@ public class BasePage{
 
     private WebDriver driver;
     private static final BaseConfig CONFIG = BaseConfig.getConfig();
+    private static final String TITLE = "Introducing Lightning Web Components - Salesforce Lightning Component Library";
 
     public BasePage(WebDriver driver){
         this.driver = driver;
         PageFactory.initElements(driver, this);
+    }
+
+    /**
+     * @return the title
+     */
+    public static String getTitle() {
+        return TITLE;
     }
 
     public static BasePage load(WebDriver driver){
