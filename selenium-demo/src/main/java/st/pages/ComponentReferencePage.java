@@ -45,7 +45,7 @@ public class ComponentReferencePage{
 
     public ComponentReferencePage selectOptionByText(String text){
         clickDropDown();
-        By option = By.xpath("//*[contains(text(), 'with Inline Edit')]");
+        By option = By.xpath("//*[contains(text(), '" + text + "')]");
         new WebDriverWait(driver, 10)
             .until(ExpectedConditions.visibilityOfElementLocated(option))
             .click();
