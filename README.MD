@@ -20,6 +20,6 @@ In order to replicate the aforesaid issue, execute the selenium code (the issue 
 
  **Actual behavior**
 
-  Table is fetch twice. 
+  Table is fetched twice. 
 
   
