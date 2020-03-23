@@ -1,6 +1,6 @@
 # Selenium demo for Sitetracker 
 
-**Notes:** The exercise assumes gecko diver is install, the easiest way to do so is through the below brew command
+**Notes:** The exercise assumes gecko diver is installed, the easiest way to do so is through the below brew command
 
 `brew install geckodriver`
 
