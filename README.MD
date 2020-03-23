@@ -1,5 +1,9 @@
 # Selenium demo for Sitetracker 
 
+**Notes:** The exercise assumes gecko diver is install, the easiest way to do so is through the below brew command
+
+`brew install geckodriver`
+
  Hi Team. As per your request, I have created a github repository where the assignment is contained. 
 
  Please note that in its current state, the automation script is incomplete, reason being that the application under test exhibits an erratic behavior when tested through selenium commands. 
@@ -21,5 +25,7 @@ In order to replicate the aforesaid issue, execute the selenium code (the issue 
  **Actual behavior**
 
   Table is fetched twice. 
+
+
 
   
