@@ -4,7 +4,7 @@
 
  Please note that in its current state, the automation script is incomplete, reason being that the application under test exhibits an erratic behavior when tested through selenium commands. 
 
- To be more specific, when selecting the table with Inline edit, the actual content of the table to be edited is not properly fetch. 
+ To be more specific, when selecting the table with Inline edit, the actual content of the table to be edited is not properly fetched. 
 
  **Steps to reproduce**
 
