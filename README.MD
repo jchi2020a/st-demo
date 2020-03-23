@@ -10,7 +10,7 @@
 
 In order to replicate thhe aforesaid issue, execute the selenium code (the issue is only reproducible when the driver is programmatically driven), cd into the root folder (selenium-demo) and invoke the command below: 
 
-    `mvn clean -Ddriver=firefox`
+`mvn clean -Ddriver=firefox`
 
 [visual cue]("https://share.getcloudapp.com/geu2Bp8Z")
 
