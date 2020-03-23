@@ -12,7 +12,7 @@ In order to replicate thhe aforesaid issue, execute the selenium code (the issue
 
     `mvn clean -Ddriver=firefox`
 
-    [visual cue]("https://share.getcloudapp.com/geu2Bp8Z")
+[visual cue]("https://share.getcloudapp.com/geu2Bp8Z")
 
  **Expected behavior**
 
