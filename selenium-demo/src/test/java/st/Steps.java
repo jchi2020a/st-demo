@@ -5,6 +5,7 @@ import static org.junit.Assert.assertThat;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.safari.SafariDriver;
 
 import cucumber.api.PendingException;
 import cucumber.api.java.After;
@@ -36,6 +37,9 @@ public class Steps {
             case "chrome":
                 driver = new ChromeDriver();
                 break;
+            case "safari":
+                driver = new SafariDriver();
+                break;
             default:
                 driver = new FirefoxDriver();
                 break;
@@ -50,6 +54,7 @@ public class Steps {
 
     @Given("^the base page is accessible$")
     public void the_base_page_is_accessible() throws Throwable {
+        Thread.sleep(1000);
         currentPage = BasePage.load(driver);
         assertThat(driver.getTitle(), is(TITLE));
     }
@@ -72,7 +77,6 @@ public class Steps {
     @Given("^I select the \"([^\"]*)\" option$")
     public void i_select_the_option(String text) throws Throwable {
         ((ComponentReferencePage) currentPage).selectOptionByText(text);
-        ((ComponentReferencePage) currentPage).editTable();
     }
 
     @Then("^testable outcome$")
